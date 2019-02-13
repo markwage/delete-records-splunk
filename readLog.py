@@ -3,12 +3,12 @@
 #===========================================================
 
 from datetime import datetime
-
+strDirectory = "C:\\Users\\Mark\\OneDrive\\Documenten\\eclipse-workspace\\"
 strInputFile = "C:\\Users\\Mark\\OneDrive\\Documenten\\eclipse-workspace\\im006222113Debug.txt"
-strOutputFile = "im006222113DebugFiltered.txt"
-strOutputFileRemoved = "im006222113DebugRemoved.txt"
+strOutputFile = strDirectory + "im006222113DebugFiltered.txt"
+strOutputFileRemoved = strDirectory + "im006222113DebugRemoved.txt"
 
-whatToDelete = ["MDC", "CookieFactory", "MultiFunctionsLoadMonitor"]
+whatToDelete = ["MDC", "CookieFactory", "MultiFunctionsLoadMonitor", "printIfFound"]
 
 currentTime = datetime.now()
 print ("%s Start met inlezen van de file" % currentTime)
@@ -22,8 +22,9 @@ with open(strInputFile) as log, open(strOutputFile, "w") as outputFile, open(str
                 outputFileRemoved.write(line)
                 break
             else:
-                outputFile.write(line)
-                break
+                if toDelete == "printIfFound":
+                    outputFile.write(line)
+                    break
             #if line.count(';') != 15:
                 #print (line)
                 #print (line.count(';'))
