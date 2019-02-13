@@ -1,8 +1,10 @@
 #===========================================================
-# import time
+# 
 #===========================================================
 
 from datetime import datetime
+from writeLog import writeLogRecord
+
 strDirectory = "C:\\Users\\Mark\\OneDrive\\Documenten\\eclipse-workspace\\"
 strInputFile = "C:\\Users\\Mark\\OneDrive\\Documenten\\eclipse-workspace\\im006222113Debug.txt"
 strOutputFile = strDirectory + "im006222113DebugFiltered.txt"
@@ -10,14 +12,12 @@ strOutputFileRemoved = strDirectory + "im006222113DebugRemoved.txt"
 
 whatToDelete = ["MDC", "CookieFactory", "MultiFunctionsLoadMonitor", "printIfFound"]
 
-currentTime = datetime.now()
-print ("%s Start met inlezen van de file" % currentTime)
+writeLogRecord("INFO", "Start met inlezen van de file")
 
 with open(strInputFile) as log, open(strOutputFile, "w") as outputFile, open(strOutputFileRemoved, "w") as outputFileRemoved :
     
     for line in log:
         for toDelete in whatToDelete:
-        #if "MDC" in line or "CookieFactory" in line or "MultiFunctionsLoadMonitor" in line or line.count(';') <=2:
             if toDelete in line:
                 outputFileRemoved.write(line)
                 break
@@ -25,12 +25,8 @@ with open(strInputFile) as log, open(strOutputFile, "w") as outputFile, open(str
                 if toDelete == "printIfFound":
                     outputFile.write(line)
                     break
-            #if line.count(';') != 15:
-                #print (line)
-                #print (line.count(';'))
 
-currentTime = datetime.now()
-print ("%s File is gefilterd en weggeschreven" % currentTime)
+writeLogRecord("INFO", "Inputfile is weggeschreven en overbodige records zijn verwijderd")
 
 #==========================================================================            
 # Count number of lines in the files to see how many records are deleted
