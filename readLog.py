@@ -3,7 +3,7 @@
 #===========================================================
 
 from datetime import datetime
-from writeLog import writeLogRecord
+from fncWriteLog import writeLogRecord
 
 strDirectory = "C:\\Users\\Mark\\OneDrive\\Documenten\\eclipse-workspace\\"
 strInputFile = "C:\\Users\\Mark\\OneDrive\\Documenten\\eclipse-workspace\\im006222113Debug.txt"
