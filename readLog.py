@@ -4,7 +4,7 @@
 
 from datetime import datetime
 
-strInputFile = "C:\Users\Mark\OneDrive\Documenten\eclipse-workspace/im006222113Debug.txt"
+strInputFile = "C:\\Users\\Mark\\OneDrive\\Documenten\\eclipse-workspace\\im006222113Debug.txt"
 strOutputFile = "im006222113DebugFiltered.txt"
 strOutputFileRemoved = "im006222113DebugRemoved.txt"
 
