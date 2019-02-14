@@ -3,12 +3,15 @@
 #===========================================================
 
 from datetime import datetime
-from fncWriteLog import writeLogRecord
+from functions import writeLogRecord
 
 strDirectory = "C:\\Users\\Mark\\OneDrive\\Documenten\\eclipse-workspace\\"
-strInputFile = "C:\\Users\\Mark\\OneDrive\\Documenten\\eclipse-workspace\\im006222113Debug.txt"
+strInputFile = strDirectory + "im006222113Debug.txt"
+writeLogRecord("INFO", "Inputfile: " + strInputFile)
 strOutputFile = strDirectory + "im006222113DebugFiltered.txt"
+writeLogRecord("INFO", "Outputfile: " + strOutputFile)
 strOutputFileRemoved = strDirectory + "im006222113DebugRemoved.txt"
+writeLogRecord("INFO", "Removed records in: " + strOutputFileRemoved)
 
 whatToDelete = ["MDC", "CookieFactory", "MultiFunctionsLoadMonitor", "printIfFound"]
 
